@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport"
+		content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover,minimal-ui=true">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body>
+	<div class="root">
+
+		<h2>將 xlsx 轉成 json 檔</h2>
+
+		<h3>注意事項:</h3>
+		<ul>
+			<li>對於格式有一定的要求，請參考excel的範例<a href="./Sample.xlsx" download>點擊下載</a></li>
+			<li>重複的變數，會加上"_s"區分</li>
+			<li>會將每個Sheet分頁內容，依照file name整合轉檔輸出</li>
+		</ul>
+
+		<h3>使用說明:</h3>
+		<ul id="descriptionStep">
+			<li>在下方上傳要轉檔的檔案</li>
+			<li>按Start</li>
+			<li>下載結果</li>
+		</ul>
+
+
+		<div class="buttonLabel">
+
+			<div class="inputBlock">
+				<label>
+					<input type="file" accept=".xls, .xlsx" id="file-uploader" data-target="file-uploader" />
+					<span id="inputFileName">
+						Choose a file...
+						<img src="./asset/uploadIcon.png">
+					</span>
+				</label>
+
+			</div>
+
+			<div id="startButton" onclick="startClick()">
+				<span>
+					Start
+				</span>
+			</div>
+		</div>
+
+		<div id="outputFileBlock">
+		</div>
+
+	</div>
+	<script src="component/xlsx.core.min.js"></script>
+	<script type="text/javascript" src="main.js">
+	</script>
+</body>
+
+</html>
